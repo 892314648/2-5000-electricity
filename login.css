@@ -1,0 +1,175 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+section{
+    width: 1226px;
+    background-color: skyblue;
+    height: 700px;
+    margin: auto;
+}
+
+#head{
+    width: 1200px;
+    height: 103px;
+    margin: 0px auto;
+    /* background-color: pink; */
+
+}
+#head p{
+    width: 187px;
+    height: 73px;
+    padding-top: 15px;
+    margin: 0px auto;
+    background: url(images/2019120310001.png) no-repeat center;
+    background-size:187px 72px;
+}
+#nav{
+    width: 1000px;
+    height: 390px;
+    margin:0px  auto 30px;
+    background-color: palegoldenrod;
+    background: url(images/dapu_2014070101_login3.jpg)
+}
+.nav{
+    width: 500px;
+    height: 350px;
+    background-color: #fff;
+    opacity: 0.8;
+    margin: 10px;
+    float: right;
+    padding:10px;
+}
+.nav h3{
+   padding-bottom: 5px;
+    font-size: 24px;
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 50px;
+    border-bottom: 1px solid rgb(135, 123, 116);
+    color: #888;
+}
+.name,.password{
+    margin:15px  0px;
+}
+
+.name span{
+    display: inline-block;
+    width: 170px;
+    height: 20px;
+    line-height: 20px;
+    text-align: right;
+    margin-right: 20px;
+}
+.password span{
+    display: inline-block;
+    width: 170px;
+    height: 20px;
+    line-height: 20px;
+    text-align: right;
+    margin-right: 20px;
+}
+.name #text{
+    width: 160px;
+    height: 25px;
+    outline: none
+}
+.password #password{
+    width: 160px;
+    height: 25px;
+    outline: none
+}
+.checkbox{
+    width: 120px;
+    height: 40px;
+
+    margin: 0px auto 5px;
+}
+.checkbox p{
+    float: left;
+    height: 40px;
+    line-height: 40px;
+}
+
+.checkbox #check{
+   margin: 10px;
+    height: 20px;
+    width: 20px;
+    float: left;
+}
+
+
+
+
+.login{
+    margin-left: 190px;
+}
+#login{
+    margin: 5px;
+    padding: 7px 15px;
+    background-color:#49afcd;
+    border: none;
+    color: #fff;
+    outline: none;
+}
+#login:hover{
+    background-color:#05313f;
+    cursor: pointer;
+
+}
+.login a{
+    text-decoration:none;
+    color: #08c;
+    font-size: 14px;
+
+}
+.login a:hover{
+    text-decoration:underline;
+}
+.registered{
+    padding-top: 10px;
+    margin-left: 190px;
+}
+.registered a{
+    text-decoration:none;
+    color: #08c;
+    font-size: 14px;
+}
+
+
+.registered a:hover{
+    text-decoration:underline;
+
+}
+
+#tail{
+    margin-top: 100px;
+    width: 1000px;
+    height: 75px;
+    background-color: #ddd;
+    margin: 0px auto;
+    padding: 20px 0px;
+        position: relative;
+        text-align: center;
+}
+#tail ul{
+
+    margin-left: 400px;
+  
+}
+#tail li{
+    float: left;
+    margin-right: 6px;
+    font-size: 14px;
+    color: #08c;
+}
+#tail li:hover{
+    cursor: pointer;
+    text-decoration:underline;
+}
+#tail p{
+   margin-top: 10px;
+    font-size: 12px;
+
+}

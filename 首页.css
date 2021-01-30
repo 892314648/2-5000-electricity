@@ -1,0 +1,451 @@
+*{
+    padding: 0px ;
+    margin: 0px;
+    text-decoration: none;
+    list-style: none;
+
+}
+#head{
+    height: 143px;
+    width: 1920px;
+    /* background: purple; */
+    margin: 0px auto;
+}
+.head{
+    height: 143px;
+    width: 1200px;
+    margin: 0px auto;
+    /* background-color: red; */
+}
+
+.head1{
+    width: 1200px;
+   height: 103px;
+    margin: 0px auto;
+    background: url(images/2019120310001.png) no-repeat  center;
+    background-size:187px 72px;
+}
+.head2{
+    height: 40spx;
+ 
+    /* background-color: peachpuff; */
+    margin: 0px auto;
+    padding-left: 350px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+.head2 #put1{
+    height: 37px;
+    border: none;
+    margin: 0px;
+    width: 400px;
+    background-color: #ddd;
+    outline: none;
+}
+.head2 #put2{
+    width: 30px;
+    height: 37px;
+    padding: 0px 0px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    /* background: red; */
+    margin-left:-5px;
+     background: url(images/dapu_homeseach.png) no-repeat center #ddd; 
+}
+.head2 span{
+    line-height: 40px;
+    display: inline-block; 
+    background-color: rgb(102, 20, 20);
+    height: 40px;
+    color: #fff;
+    padding: 0px 15px;
+}
+#login,#registered{
+    color: #fff;
+}
+
+/* 以下是首页导航 */
+#nav{
+    position: relative;
+    height: 50px;
+    width:1920px;
+    margin:0px  auto;
+
+}
+.navul{
+    width: 1200px;
+    height: 50px;
+    margin: 0px auto;
+    /* padding-left: 200px; */
+    padding: 0px auto;
+}
+.navul li{
+    width: 90px;
+    float: left;
+    line-height: 30px;
+    padding: 10px 0px;
+    position: relative;
+    margin: 0px 20px;
+
+}
+.navul li a{
+    color: #009688;
+    font-size: 16px;
+}
+
+.li1hover{
+    position: absolute;
+    left:-760px;
+    top: 50px;   
+    /* display: none; */
+    background-color: #eee;
+    width: 1161px;
+    height: 300px;
+    padding-left: 760px;
+    opacity: 0.9;
+  
+    /* background-color: red; */
+    
+}
+.li1hover li{
+    width: 800px;
+    float: none;
+    font-size: 16px;
+}
+
+
+
+.li1hover1{
+    display: inline-block;
+    z-index: 1;
+    }
+
+#nav ol span{
+    display: inline-block;
+    padding: 0px 5px;
+}
+#nav ol span:hover{
+    /* background-color: #aaa; */
+    cursor: pointer;  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#body{
+    width: 1920px;
+    margin: 0px auto;
+    position: relative;
+    overflow: hidden;
+    height: 620px;
+    /* background: url(images/首页图1.jpg) no-repeat; */
+    /* float: left; */
+}
+.body{
+    height: auto;;
+    width:1200px;
+    margin: 0px auto;
+    overflow: hidden;
+    /* position: relative; */
+  
+}
+.shuffling{
+    width: 1000000px;
+    height: 620px;
+    /* background-color: red; */
+
+}
+.shuffling li{
+    width: 1920px;
+    float: left;
+    height: 620px;
+}
+.shufflingp1{
+    position: absolute;
+    left: 20%;
+    top: 45%;
+    width: 30px;
+    height: 30px;
+    z-index: 11;;
+}
+.shufflingp1:hover{
+    cursor: pointer;
+}
+
+
+.shufflingp2{
+    position: absolute;
+    right: 20%;
+    top: 45%;
+    width: 30px;
+    height: 30px;
+    z-index: 11;;
+}
+.shufflingp2:hover{
+    cursor: pointer;
+}
+.aa{
+    display: block;
+}
+
+.shufflingol{
+    width: auto;
+    height: 20px;
+    position: absolute;
+    left:45%;
+    bottom: 10%;
+    transform: translate(-50% -50%);
+    /* background-color: skyblue; */
+}
+.shufflingol li{
+    float: left;
+    height: 20px;
+    width: 20px;
+    opacity: 0.9;
+    border-radius: 50%;
+    margin: 0px 10px;
+    background-color: #888;
+}
+
+.shufflingol li:hover{
+cursor: pointer;
+
+
+}
+
+.shufflingol .as{
+   
+    background: red;
+  
+}
+
+
+
+
+
+/* <!--尾部导航 --> */
+#tail{
+    width: 1920px;
+    height: 200;
+    margin: 0px auto;
+    background-color:#eee;;
+
+}
+.tail{
+    width: 1200px;
+    height: 200px;
+    margin: 0px auto;
+}
+
+
+
+.tail1{
+    width: 600px;
+    /* background-color: aqua; */
+    height: 200px;
+    float: left;
+}
+.tail1 ul{
+    height: 40px;
+    padding-left: 50px;
+  
+}
+.tail1 ul li{
+    height: 40px;
+    float: left;
+    padding: 10px 1px;
+    line-height: 40px;
+}
+.centertail1{
+    padding-left: 10px;
+    height: 50px;
+}
+.centertail12{
+    padding-left: 110px;
+    margin-top: 10px;
+}
+.centertail13{
+    width: 300px;
+    height: 30px;
+    background: url(images/beijing工商局icon\ .png) no-repeat 250px;
+    padding-left: 280px;
+    margin-top: 10px;
+ 
+}
+.centertail14{
+    width: 300px;
+    height: 30px;
+    background: url(images/beijing工商局icon\ .png) no-repeat 100px;
+    padding-left: 130px;
+    margin-top: 10px;
+ 
+}
+
+
+
+.tail2{
+    width: 300px;
+    background-color: rgba(70, 160, 160, 0.836);
+    height: 200px;
+    float: left;
+    height: 200px;
+    background: url(images/20190924001.png) no-repeat center
+
+}
+.tail3{
+    width: 300px;
+    /* background-color: palevioletred; */
+    height: 200px;
+    float: left;
+}
+.tail3 p{
+width: 120px;
+height: 120px;
+margin: 30px auto 0px;
+background: url(images/20190924002.png) no-repeat center
+}
+
+.tail3 span{
+
+text-align: center;
+margin-left: 85px;
+margin-top: 10px;
+
+}
+
+
+/* 侧边栏 */
+#sidebar{
+    height: 100%;
+    width: 40px;
+    background-color: #fff;
+opacity: 0.8;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+}
+.sidebar{
+     height: 200px; 
+    width: 40px; 
+    position: absolute;
+    left: 0px;
+    top: 50%;
+
+    transform: translateY(-50%)
+}
+.sidebar:hover{
+   cursor: pointer;
+}
+.sidebar p{
+    height: 40px;
+    width: 40px;
+}
+.sidebarp1{
+    height: 40px;
+    width: 40px;
+    background: url(images/dapu_201510150001-home.png) no-repeat;
+}
+.sidebarp1:hover{
+   background-color: red;
+    line-height: 40px;
+    color: #fff;
+    text-align: center;
+}
+
+.sidebarp2{
+    height: 40px;
+    width: 40px;
+    background: url(images/dapu_201510150001-member.png) no-repeat;
+}
+
+.sidebarp2:hover{
+   background-color: red;
+    line-height: 20px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+}
+
+
+.sidebarp3{
+    height: 40px;
+    width: 40px;
+    background: url(images/dapu_201510150001-cart.png) no-repeat;
+}
+.sidebarp3:hover{
+   background-color: red;
+    line-height: 40px;
+    color: #fff;
+    text-align: center;
+}
+.sidebardiv{
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    left: -120px;
+    top: 100px;
+    background-color: red;
+    background: url(images/20190924002.png) no-repeat;
+    display: none
+}
+.sidebardiv2{
+display: block;
+}
+.sidebarp4{
+    height: 40px;
+    width: 40px;
+    background: url(images/dapu_20161013_huiyuan.png)  ;
+    background-size: 100% 100%;
+}
+.sidebarp4:hover{
+    background-color: red;
+
+     line-height: 40px;
+     /* color: #fff; */
+     text-align: center;
+ }
+
+
+.sidebarp5{
+    height: 40px;
+    width: 40px;
+    background: url(images/dapu_201510150001-top.png) no-repeat ;
+ 
+}
+.sidebarp5:hover{
+    line-height: 20px;
+    color: #fff;
+    background-color: red;
+
+    text-align: center;
+}

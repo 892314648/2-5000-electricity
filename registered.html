@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>login</title>
+    <link rel="stylesheet" href="registered.css">
+
+</head>
+
+<body>
+
+    <section>
+
+        <div id="head">
+            <p></p>
+        </div>
+        <div id="nav">
+            <div class="nav">
+
+
+                <div class="name">
+                    <span>用户名 ：</span>
+
+                    <input type="text" name="" id="text" placeholder="请输入用户名">
+                </div>
+
+
+                <div class="password">
+                    <span>密码 ：</span>
+                    <input type="password" name="" id="password" placeholder="请输入六位数以上密码">
+                    <div id="add">
+                        <p id="addp">
+
+                        </p>
+                        <ul class="addul">
+                            <li>弱</li>
+                            <li>中</li>
+                            <li>强</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+
+
+
+
+                <div class="password">
+                    <span>确认密码 ：</span>
+                    <input type="password" name="" id="password1" placeholder="请确认密码">
+                </div>
+                <div class="password">
+                    <span>验证码 ：</span>
+                    <input type="password" name="" id="password" placeholder="请输入验证码" class="Verification">
+                    <span id="span"></span>
+                    <button class="code">获取验证码</button>
+                </div>
+                <div class="checkbox">
+                    <p>
+                        <input type="checkbox" name="" id="check">
+                    </p>
+                    <p>同意注册协议
+                        <a href="">《大朴用户协议》</a>
+                    </p>
+                </div>
+                <div class="checkbox2">
+                    <button id="registered">注册</button>
+                    <p>我已经注册，现在就
+                        <a href="/project/login.html">登录</a>
+                    </p>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div id="tail">
+            <ul>
+                <li>关于大朴</li>
+
+                <li>帮助中心</li>
+
+                <li>联系我们</li>
+
+                <li>手机大朴</li>
+
+            </ul>
+
+            <br>
+            <p>Copyright © 2012-2015 dapu.com 大朴版权所有 京ICP备12027522号 京ICP证130030号</p>
+
+        </div>
+    </section>
+
+
+</body>
+
+</html>
+
+<script src="JS/jquery.min.js"></script>
+<script>
+    let check = document.querySelector("#check")
+    let password = document.querySelector("#password")
+    let password1 = document.querySelector("#password1")
+
+
+    //验证码函数封装 
+    function code(num) {
+        let ltt = num || 4
+        let random = ""
+        let letter = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+        for (var i = 0; i < ltt; i++) {
+            let qw = Math.floor(Math.random() * letter.length)
+            random = random + letter[qw]
+        }
+        return random
+    }
+
+    //获取验证码
+    $(".code").click(function () {
+        $("#span").html(code())
+    })
+
+    //正则判断密码
+    password.onkeyup = function () {
+        if (password.value.length < 6) {
+            $("#addp").removeClass("addp1")
+
+            $("#addp").removeClass("addp2")
+            $("#addp").removeClass("addp3")
+        }
+        else {
+            if (/^[0-9A-z]{6,20}$/.test(this.value)) {
+                // console.log(1)
+                $("#addp").addClass("addp1")
+                $("#addp").removeClass("addp2")
+                $("#addp").removeClass("addp3")
+
+            }
+            if (/^([0-9]+[A-z]+[0-9A-z]{0,})|([A-z]+[0-9]+[0-9A-z]{0,})|([0-9]+[\￥\#\@\*]+[0-9\￥\#\@\*]{0,})|([\￥\#\@\*]+[0-9]+[\￥\#\@\*0-9]{0,})|([A-z]+[\￥\#\@\*]+[A-z\￥\#\@\*]{0,})|([\￥\#\@\*]+[A-z]+[\￥\#\@\*A-z]{0,})$/.test(this.value)) {
+                $("#addp").addClass("addp2")
+                $("#addp").removeClass("addp3")
+                console.log(2)
+            }
+
+            if (/^([0-9]+[A-z]+[\￥\#\@\*]+[0-9|A-z|\￥\#\@\*]{0,})|([A-z]+[0-9]+[\￥\#\@\*]+[A-z|0-9|\￥\#\@\*]{0,})|([0-9]+[\￥\#\@\*]+[A-z]+[A-z|0-9|\￥\#\@\*]{0,})|([\￥\#\@\*]+[0-9]+[A-z]+[A-z|0-9|\￥\#\@\*]{0,})|([A-z]+[\￥\#\@\*]+[0-9]+[A-z|0-9|\￥\#\@\*]{0,})|([\￥\#\@\*]+[A-z]+[0-9]+[A-z|0-9|\￥\#\@\*]{0,})$/.test(this.value)) {
+                $("#addp").addClass("addp3")
+                console.log(3)
+            }
+        }
+    }
+    //点击注册
+    $("#registered").click(function () {
+        //判断验验证码
+        if ($(".Verification").val() === $("#span").html()) {
+
+            //判断有没有勾选协议框
+            if (check.checked) {
+                let text = $("#text").val()
+                let password = $("#password").val()
+                let password1 = $("#password1").val()
+
+                if (password !== password1) {
+                    alert("密码不同，请确认密码")
+                }
+                console.log(text)
+                console.log(password)
+                //向后端发送请求
+                if (text && password === password1) {
+                    let http = new XMLHttpRequest()
+                    http.open("post", "http://192.168.1.4/project/registered.php?username=" + text + "&userpass=" + password)
+
+                    // http.open("get", `http://192.168.1.4:8080/regist?text=${text}&password=${password}`)
+                    http.send()
+                    http.onreadystatechange = function () {
+                        if (http.readyState === 4) {
+                            console.log(http.responseText)
+                            if (http.responseText === "fail") {
+                                alert("注册失败")
+
+                            }
+                            if (http.responseText === "success") {
+                                alert("注册成功，点击去登录")
+                                 location.href = "http://192.168.1.4/project/login.html"
+                            }
+                        }
+                    }
+                }
+            }
+            else {
+                alert("请点击同意注册协议")
+            }
+        }
+        else (
+            alert("验证码错误")
+        )
+
+    })
+
+
+
+
+
+
+</script>
+
+
+<!--  密码：6-18位字符组成       有密码强弱验证：
+// 	 	      无效
+// 	 	      弱:如果纯数字或者纯字母就是弱。
+//                中：如果数字加字母 或 数字加特殊符号 或 字母加特殊符号就是中。
+               
+
+
+
+// 	 	      强：如果数字加字母加特殊符号就是强。 -->

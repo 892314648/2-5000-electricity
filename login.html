@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>login</title>
+    <link rel="stylesheet" href="login.css">
+    <style>
+        .checkbox {
+            width: 120px;
+            height: 40px;
+
+            margin: 0px auto 5px;
+        }
+
+        .checkbox p {
+            float: left;
+            height: 40px;
+            line-height: 40px;
+        }
+
+        .checkbox #check {
+            margin: 10px;
+            height: 20px;
+            width: 20px;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+
+
+
+
+
+
+        <div id="head">
+            <p></p>
+        </div>
+        <div id="nav">
+            <div class="nav">
+                <h3>用户登录</h3>
+                <div class="name">
+                    <span>用户名 ：</span>
+
+                    <input type="text" name="" id="text" placeholder="请输入用户名">
+                </div>
+                <div class="password">
+                    <span>密码 ：</span>
+                    <input type="password" name="" id="password" placeholder="请输入密码">
+                </div>
+
+
+
+                <div class="checkbox">
+                    <input type="checkbox" name="" id="check">
+                    <p>记住密码</p>
+                </div>
+
+
+
+                <div class="login">
+                    <input type="button" name="" id="login" value="登录">
+                    <a href="/project/registered.html">忘记密码 </a>
+                </div>
+
+                <div class="registered">
+                    <a href="">手机校检登录</a>
+                    <span> | </span>
+                    <a href="/project/registered.html">免费注册</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="tail">
+            <ul>
+                <li>关于大朴</li>
+
+                <li>帮助中心</li>
+
+                <li>联系我们</li>
+
+                <li>手机大朴</li>
+
+            </ul>
+
+            <br>
+            <p>Copyright © 2012-2015 dapu.com 大朴版权所有 京ICP备12027522号 京ICP证130030号</p>
+
+        </div>
+    </section>
+
+
+</body>
+
+</html>
+
+<script src="JS/jquery.min.js"></script>
+<script>
+    let check = document.querySelector("#check")
+    let text = document.querySelector("#text")
+    let password = document.querySelector("#password")
+
+
+
+    //本地存储
+    $("#login").click(function () {
+        if (check.checked) {
+            document.cookie = "text" + "=" + text.value, new Date("2021/12/19 18:00")
+            document.cookie = "password" + "=" + password.value, new Date("2021/12/19 18:00")
+        }
+
+
+
+        // let http = new XMLHttpRequest()
+        // http.open("get", `http://192.168.1.4:8080/login?text=${$("#text").val()}&password=${$("#password").val()}`)
+        // http.send()
+        // http.onreadystatechange = function () {
+        //     if (http.readyState === 4) {
+        //         if (http.responseText === "success") {
+        //             alert("登录成功")
+        //             location.href = "http://192.168.1.4/project/%E9%A6%96%E9%A1%B5.html"
+        //         }
+        //         else {
+        //             alert("用户名或密码错误")
+        //         }
+        //     }
+        // }
+
+        let tex = String($("#text").val())
+        let pass = String($("#password").val())
+        let http = new XMLHttpRequest()
+
+
+        http.open("get", "http://192.168.1.4/project/loginCheck.php?username=" + tex)
+        http.send()
+        http.onreadystatechange = function () {
+            if (http.readyState === 4) {
+                let as = http.responseText
+               
+                if (Number(http.responseText) === 1) {
+                    alert("用户名不存在")
+                }
+                if (Number(http.responseText) === 0) {
+
+
+                    console.log(tex)
+                    console.log(pass)
+                    let http = new XMLHttpRequest()
+
+                    http.open("get", "http://192.168.1.4/project/login.php?username=" + tex + "&userPass=" + pass)
+                    http.send()
+                    http.onreadystatechange = function () {
+                        if (http.readyState === 4) {
+                     location.href = "http://192.168.1.4/project/%E9%A6%96%E9%A1%B5.html"
+
+
+
+
+
+
+
+                        }
+
+
+
+
+                        //     location.href = "http://192.168.1.4/project/%E9%A6%96%E9%A1%B5.html"
+                        // }
+                        // else {
+                        //     alert("用户名或密码错误")
+
+                    }
+                    // else{
+                    //     console.log(2)
+                    // }
+                }
+
+
+
+            }
+
+        }
+    })
+    function has(index) {
+        let arr = document.cookie.split("; ")
+        let aa = {}
+        for (let i = 0; i < arr.length; i++) {
+            let key = arr[i].split("=")[0]
+            let value = arr[i].split("=")[1]
+            aa[key] = value
+        }
+        return aa[index]
+    }
+
+
+    if (has("text") && has("password")) {
+        text.value = has("text")
+        password.value = has("password")
+
+    }
+
+
+</script>

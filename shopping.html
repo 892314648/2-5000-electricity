@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="shopping.css">
+</head>
+
+<body>
+    <div class="head">
+        <p class="head1" id="jump">
+        </p>
+        <p class="head2">
+        </p>
+    </div>
+    <div id="text">
+        <div class="text">
+            <p class="p1">我的购物车</p>
+            <p class="p2">清空购物车</p>
+        </div>
+    </div>
+
+    <div id="form">
+        <div class="form">
+            <table>
+
+                <thead class="thead">
+
+
+                    <tr class="tr1">
+                        <td style="width: 60px;">
+                            <input type="checkbox" name="" id="" style="width: 20px;height: 20px;">
+                        </td>
+                        <td style="width: 480px">商品信息</td>
+                        <td style="width: 120px">商品单价</td>
+                        <td style="width: 180px">商品数量</td>
+                        <td style="width: 120px">小计</td>
+                        <td style="width: 120px">操作</td>
+                    </tr>
+
+
+                    <tr class="tr3 ">
+                        <td class="td1">
+                            <input type="checkbox" name="" id="checkbox" style="width: 20px;height: 20px;margin-left: 20px;">
+                        </td>
+                        <td>
+                            <p class="p1">
+
+                            </p>
+                            <p class="p2">
+                                颜色：
+                                <span class="span1"></span>
+                            </p>
+
+                        </td>
+                        <td class="td3">
+                            <span class="span2"></span>
+                        </td>
+                        <td class="td4">
+
+
+
+                            <div class="div1">
+                                -
+                                <!-- <button class="but1">-</button> -->
+                            </div>
+                            <span class="span3">1</span>
+                            <div class="div2">
+                                +
+                                <!-- <button class="but2">-</button> -->
+                            </div>
+
+
+
+                        </td>
+                        <td class="td5">
+                            <span class="span4">
+
+                            </span>
+                        </td>
+                        <td class="td6">
+                            <span class="span5">删除</span>
+                        </td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+
+    <div id="preferential">
+        <div class="preferential">
+            <p class="p1">已享受的促销优惠</p>
+            <p class="p2"> 满88包邮</p>
+        </div>
+
+
+
+    </div>
+
+    <div id="settlement">
+        <div class="settlement">
+
+
+            <p class="p1">原始金额:
+                <span class="span1">299</span>
+            </p>
+            <p class="p2">优惠金额:
+                <span class="span2">000</span>
+            </p>
+            <p class="p3">
+                商品总金额(不含运费)：
+
+
+                <span class="span3">299</span>
+            </p>
+            <div class="div1">
+                <p class="p4">继续购物</p>
+                <p class="p5">去结算</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script src="JS/jquery.min.js">
+</script>
+<script>
+
+    var zz = 0
+    //向后台发送请求
+    let as = window.location.search.split("=")
+    let vipName = as[1]
+
+
+    function has() {
+        let http = new XMLHttpRequest()
+        http.open("get", "http://192.168.1.4/project/shopping.php?vipName=" + vipName)
+        http.send()
+        http.onreadystatechange = function () {
+            if (http.readyState === 4) {
+                let as = http.responseText
+                let json = JSON.parse(as)
+                console.log(json)
+                for (let i = 0; i < json.length; i++) {
+                    let newtr2 = $(".tr3").clone(true)
+                    newtr2.removeClass("tr3")
+                    newtr2.addClass("tr2")
+                    newtr2.find(".p1").html(json[i].goodsId) //名字
+                    newtr2.find(".p2 .span1").html(json[i].goodsName)//颜色
+                    newtr2.find(".td3").html("￥" + json[i].goodsPrice)//单价
+                    newtr2.find(".td4 .span3").html(json[i].goodsCount)//商品数量
+                    newtr2.find(".td5 .span4").html((json[i].goodsCount) * (json[i].goodsPrice))//小计
+                    newtr2.appendTo($(".thead"))
+                    console.log(newtr2.find(".td5 .span4").html())
+                    zz = zz + Number(newtr2.find(".td5 .span4").html())
+                    $(".settlement").find(".span1").html(zz)
+                    $(".settlement").find(".span3").html(zz)
+
+                }
+            }
+        }
+    }
+    has()
+
+    $(".span5").click(function () {
+        let checkbox = $($(this).closest(".tr2").find(".td1").find("#checkbox")).get(0)
+        let goodsId = $(this).closest(".tr2").find(".p1").html()
+        console.log(goodsId)
+        if (checkbox.checked) {
+            let http = new XMLHttpRequest()
+            http.open("get", "http://192.168.1.4/project/shoppingRemove.php?vipName=" + vipName + "&goodsId=" + goodsId)
+            http.send()
+            http.onreadystatechange = function () {
+                if (http.readyState === 4) {
+                    alert("删除成功")
+                    $(this).closest(".tr2").hide()
+                    history.go(0)
+
+
+                }
+            }
+        }
+        else {
+            alert("请点击前面确认框")
+        }
+    })
+
+    //点击数量减少
+    $(".div1").click(function () {
+        let span = $(this).closest(".tr2").find(".span3").html()
+        let n = span - 1
+        $(this).closest(".tr2").find(".span3").html(n)
+        if (n <= 1) {
+            $(this).closest(".tr2").find(".span3").html(1)
+        }
+        let goodsCount = $(this).closest(".tr2").find(".span3").html()
+        let goodsId = $(this).closest(".tr2").find(".p1").html()
+        let http = new XMLHttpRequest()
+        http.open("get", "http://192.168.1.4/project/shoppingModify.php?vipName=" + vipName + "&goodsId=" + goodsId + "&goodsCount=" + goodsCount)
+        http.send()
+        http.onreadystatechange = function () {
+            if (http.readyState === 4) {
+                // alert(http.responseText+"修改数量成功")
+                $(this).closest(".tr2").hide()
+                history.go(0)
+
+            }
+
+        }
+    })
+
+
+
+
+    //点击数量增加
+    $(".div2").click(function () {
+        let span = $(this).closest(".tr2").find(".span3").html()
+        let n = Number(span) + 1
+        $(this).closest(".tr2").find(".span3").html(n)
+
+        let goodsCount = $(this).closest(".tr2").find(".span3").html()
+        let goodsId = $(this).closest(".tr2").find(".p1").html()
+        let http = new XMLHttpRequest()
+        http.open("get", "http://192.168.1.4/project/shoppingModify.php?vipName=" + vipName + "&goodsId=" + goodsId + "&goodsCount=" + goodsCount)
+        http.send()
+        http.onreadystatechange = function () {
+            if (http.readyState === 4) {
+                // alert(http.responseText+"修改数量成功")
+                // $(this).closest(".tr2").hide()
+                // newtr2.find(".td5 .span4").html("￥" + (json[i].goodsCount) * (json[i].goodsPrice))//小计
+                history.go(0)
+// has()
+            }
+
+        }
+    })
+
+
+
+</script>

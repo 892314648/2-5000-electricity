@@ -1,0 +1,192 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+section{
+    width: 1226px;
+    background-color: skyblue;
+    height: 700px;
+    margin: auto;
+}
+
+#head{
+    width: 1200px;
+    height: 103px;
+    margin: 0px auto;
+    /* background-color: pink; */
+
+}
+#head p{
+    width: 187px;
+    height: 73px;
+    padding-top: 15px;
+    margin: 0px auto;
+    background: url(images/2019120310001.png) no-repeat center;
+    background-size:187px 72px;
+}
+#nav{
+    width: 1000px;
+    height: 400px;
+    margin:0px  auto 30px;
+    background-color: palegoldenrod;
+    background: url(images/dapu_2014070101_login3.jpg)
+}
+.nav{
+    width: 500px;
+    height: 375px;
+    background-color: beige;
+    opacity: 0.8;
+    margin: 5px;
+    margin-bottom: 0px;
+    float: right;
+    padding: 20px 0px 0px 20px;
+}
+.name{
+    margin: 10px 0px;
+}
+.name span{
+     display: inline-block;
+    text-align: right;
+    width: 100px;
+}
+#text{
+    height: 25px;
+}
+.password{
+    margin: 20px 0px;
+    position: relative;
+}
+.password span{
+    display: inline-block;
+   text-align: right;
+   width: 100px;
+}
+#password{
+    height: 25px;
+}
+/* add */
+#add{
+    display: inline-block;
+    position: absolute;
+    right: 15px;
+  
+    bottom: -10px;
+    margin-top: 10px;
+    background: url(images/dapu_pwd-1.png) no-repeat ;
+}
+#add p{
+    height: 15px;
+}
+
+/* 弱 */
+.addp1{
+    width: 60px;
+    height: 15px;
+    background: url(images/dapu_pwd-2.png) no-repeat 0px;
+}
+
+/* 中 */
+.addp2{
+    width: 120px;
+    height: 15px;
+    background: url(images/dapu_pwd-2.png) no-repeat 0px;
+}
+/* 强 */
+.addp3{
+    width:180px;
+    height: 15px;
+    background: url(images/dapu_pwd-2.png) no-repeat 0px;
+}
+
+
+
+
+
+#add ul li{
+    float: left;
+    widows:60px;
+    padding: 0px 22px;
+    font-size: 14px;
+}
+
+
+
+
+#password1{
+    height:25px;
+}
+
+#span{
+    text-align: left;
+    margin-left: 10px;
+    width: 70px;
+}
+.code{
+    padding: 5px;
+    cursor: pointer;
+}
+.checkbox{
+    margin:25px 0px 10px 100px;
+    width: 100%;
+    
+}
+/* #check{
+    
+    float: left;
+  
+} */
+.checkbox p{
+    display: inline-block;
+    margin: 20px 0px;
+
+}
+.checkbox2{
+    margin:25px 0px 10px 100px;
+
+}
+.checkbox2 p{
+    display: inline-block;
+    margin: 2px;
+}
+#registered{
+    padding: 5px 30px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+#tail{
+    margin-top: 100px;
+    width: 1000px;
+    height: 75px;
+    background-color: #ddd;
+    margin: 0px auto;
+    padding: 20px 0px;
+        position: relative;
+        text-align: center;
+}
+#tail ul{
+
+    margin-left: 400px;
+  
+}
+#tail li{
+    float: left;
+    margin-right: 6px;
+    font-size: 14px;
+    color: #08c;
+}
+#tail li:hover{
+    cursor: pointer;
+    text-decoration:underline;
+}
+#tail p{
+   margin-top: 10px;
+    font-size: 12px;
+
+}

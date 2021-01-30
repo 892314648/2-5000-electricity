@@ -1,0 +1,216 @@
+#head{
+    height: 143px;
+    width: 1920px;
+    /* background: purple; */
+    margin: 0px auto;
+}
+.head{
+    height: 143px;
+    width: 1200px;
+    margin: 0px auto;
+    /* background-color: red; */
+}
+
+.head1{
+    width: 1200px;
+   height: 103px;
+    margin: 0px auto;
+    background: url(http://activity.dapuimg.com/2019082001logo.png) no-repeat  center;
+    background-size:187px 72px;
+}
+#text{
+    height: 30px;
+    width: 1920px;
+    /* background: purple; */
+    margin: 0px auto;
+}
+.text{
+    height: 30px;
+    width: 1200px;
+    margin: 0px auto;
+    /* background-color: red;  */
+
+}
+.text .p1{
+ float: left;
+ line-height: 30px;
+ margin: 0px;
+ 
+}
+.text .p2{
+    float: right;
+    line-height: 30px;
+    margin: 0px;
+}
+#form{
+    /* height: 255px;    */
+    width: 1920px;
+    /* background: purple; */
+    margin: 0px auto;
+}
+.form{
+    height: 2505x;
+    width: 1200px;
+    margin: 0px auto;
+    border-right: 1px solid #aaa;
+    /* background-color: #888;  */
+}
+.form tr td{
+border-left: 1px solid #aaa;
+border-top: 1px solid #aaa;
+}
+.tr3{
+    display: none;
+}
+/* .tr3{
+    display:block;
+} */
+.form .tr2 td{
+border-bottom: 1px solid #aaa;
+}
+
+
+
+.form .tr1{
+    height: 100px;
+    /* background-color: palegoldenrod;; */
+    width: 1200px;
+}
+.form .tr1 td{
+    padding: 20px;
+}
+
+.form .tr2{
+
+    height: 150px;
+    /* background-color:palegoldenrod; */
+}
+
+.tr2 .td3 .span2{
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.tr2 .td4 div{
+    display: inline-block;
+    width: 30px;
+    height: 30px;;
+    border: none;
+    border: 1px solid #aaa;
+    text-align: center;
+    vertical-align: middle;
+}
+.tr2 .td4 div:hover{
+
+    background-color: #888;
+    cursor: pointer;
+    
+}
+.tr2 .td4 .div1{
+margin-left: 30px;
+    
+    
+}
+
+.tr2 .td4 .span2{
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid #aaa;
+    border-top: solid 1px #aaa;
+    margin: 0px;
+   line-height: 30px;
+}
+.tr2 .td5 .span4{
+margin-left: 20px;
+}
+
+.tr2 .td6 .span5{
+    margin-left: 20px;
+    background-color: red;
+    padding: 8px 15px;
+    color: #fff;
+} .tr2 .td6 .span5:hover{
+    cursor: pointer;
+}
+#preferential{
+    width: 1920px;
+    height: 100px;
+    margin: 30px auto 0px ;
+}
+.preferential{
+    width: 1190px;
+    height: 100px;
+    margin: 0px auto;
+    background-color: #ccc;
+    padding-left: 10px;
+}
+.preferential .p1{
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.preferential .p2{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+#settlement{
+    width: 1920px;
+    height: 200px;
+    margin: 0px auto;
+    /* background-color: palegoldenrod; */
+}
+.settlement{
+    width: 1200px;
+    height: 200px;
+    margin: 0px auto;
+    /* background-color: palevioletred; */
+}
+.settlement .p1{
+    text-align: right;
+height: 20px;
+line-height: 20px;
+}
+.settlement .p2{
+    text-align: right;
+    height: 20px;
+line-height: 20px;
+color: red;
+}
+
+.settlement .p3{
+    text-align: right;
+    height: 20px;
+    line-height: 20px;
+}
+
+
+
+.settlement .div1{
+    text-align: right;
+}
+.settlement .div1 .p4{
+    display: inline-block;
+    background-color: #888;
+    color: #fff;
+    padding: 8px 15px;
+    margin-right: 10px;
+}
+.settlement .div1 .p4:hover{
+cursor: pointer;
+}
+
+.settlement .div1 .p5{
+    display: inline-block;
+    background-color: red;
+    color: #fff;
+    padding: 8px 15px;
+}
+
+.settlement .div1 .p5:hover{
+cursor: pointer;
+}
